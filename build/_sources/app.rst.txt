@@ -1,0 +1,32 @@
+Application
+===========
+
+Routes Overview
+---------------
+
+.. qrefflask:: app:app
+   :include-empty-docstring:
+   :undoc-static:
+
+Routes
+------
+
+.. autoflask:: app:app
+   :include-empty-docstring:
+   :undoc-static:
+
+Translations
+------------
+
+.. automodule:: app.translations
+   :members:
+   :exclude-members: translations
+
+   .. autodata:: translations
+      :annotation: = {}
+
+Utilities
+--------------------
+
+.. automodule:: app.utilities
+    :members:

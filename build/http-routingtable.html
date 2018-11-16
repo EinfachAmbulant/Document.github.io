@@ -1,0 +1,416 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTTP Routing Table &#8212; Einfach:ambulant  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+
+    <script type="text/javascript">
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+
+   <h1>HTTP Routing Table</h1>
+
+   <div class="modindex-jumpbox">
+   <a href="#cap-/"><strong>/</strong></a> | 
+   <a href="#cap-/accounts"><strong>/accounts</strong></a> | 
+   <a href="#cap-/chat"><strong>/chat</strong></a> | 
+   <a href="#cap-/documents"><strong>/documents</strong></a> | 
+   <a href="#cap-/events"><strong>/events</strong></a> | 
+   <a href="#cap-/login"><strong>/login</strong></a> | 
+   <a href="#cap-/logout"><strong>/logout</strong></a> | 
+   <a href="#cap-/menu"><strong>/menu</strong></a> | 
+   <a href="#cap-/messages"><strong>/messages</strong></a> | 
+   <a href="#cap-/patients"><strong>/patients</strong></a> | 
+   <a href="#cap-/signup"><strong>/signup</strong></a>
+   </div>
+
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/"><td></td><td>
+       <strong>/</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--"><code class="xref">GET /</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/accounts"><td></td><td>
+       <strong>/accounts</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--accounts"><code class="xref">GET /accounts</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--accounts-(id)"><code class="xref">GET /accounts/(id)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--accounts-(id)-edit"><code class="xref">GET /accounts/(id)/edit</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--accounts-(id)-delete"><code class="xref">POST /accounts/(id)/delete</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--accounts-(id)-edit"><code class="xref">POST /accounts/(id)/edit</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/chat"><td></td><td>
+       <strong>/chat</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--chat"><code class="xref">GET /chat</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--chat-(contact)-messages-(int-batch)"><code class="xref">GET /chat/(contact)/messages/(int:batch)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/documents"><td></td><td>
+       <strong>/documents</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--documents"><code class="xref">GET /documents</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--documents-(id)"><code class="xref">GET /documents/(id)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--documents-(id)-edit"><code class="xref">GET /documents/(id)/edit</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--documents-create"><code class="xref">GET /documents/create</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--documents"><code class="xref">POST /documents</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--documents-(document_id)-notes-(note_id)-delete"><code class="xref">POST /documents/(document_id)/notes/(note_id)/delete</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--documents-(id)-delete"><code class="xref">POST /documents/(id)/delete</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--documents-(id)-edit"><code class="xref">POST /documents/(id)/edit</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--documents-(id)-notes"><code class="xref">POST /documents/(id)/notes</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--documents-create"><code class="xref">POST /documents/create</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/events"><td></td><td>
+       <strong>/events</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--events"><code class="xref">GET /events</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--events"><code class="xref">POST /events</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--events-delete"><code class="xref">POST /events/delete</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/login"><td></td><td>
+       <strong>/login</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--login"><code class="xref">POST /login</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/logout"><td></td><td>
+       <strong>/logout</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--logout"><code class="xref">GET /logout</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/menu"><td></td><td>
+       <strong>/menu</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--menu"><code class="xref">GET /menu</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--menu-pdf-(num_week)"><code class="xref">GET /menu/pdf/(num_week)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--menu"><code class="xref">POST /menu</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#delete--menu"><code class="xref">DELETE /menu</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/messages"><td></td><td>
+       <strong>/messages</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--messages"><code class="xref">GET /messages</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--messages-(id)"><code class="xref">GET /messages/(id)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--messages"><code class="xref">POST /messages</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--messages-(id)-delete"><code class="xref">POST /messages/(id)/delete</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/patients"><td></td><td>
+       <strong>/patients</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients"><code class="xref">GET /patients</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(id)"><code class="xref">GET /patients/(id)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(id)-calendar"><code class="xref">GET /patients/(id)/calendar</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(id)-documents"><code class="xref">GET /patients/(id)/documents</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(id)-edit"><code class="xref">GET /patients/(id)/edit</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(id)-menu"><code class="xref">GET /patients/(id)/menu</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(id)-menu-pdf-(num_week)"><code class="xref">GET /patients/(id)/menu/pdf/(num_week)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-(patient_id)-calendar-schedules-(schedule_id)-(action)"><code class="xref">GET /patients/(patient_id)/calendar/schedules/(schedule_id)/(action)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--patients-create"><code class="xref">GET /patients/create</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--patients-(id)-calendar-request"><code class="xref">POST /patients/(id)/calendar/request</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--patients-(id)-edit"><code class="xref">POST /patients/(id)/edit</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--patients-(id)-menu"><code class="xref">POST /patients/(id)/menu</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--patients-create"><code class="xref">POST /patients/create</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#put--patients-(id)-calendar-schedules"><code class="xref">PUT /patients/(id)/calendar/schedules</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#delete--patients-(patient_id)-calendar-schedules-(schedule_id)"><code class="xref">DELETE /patients/(patient_id)/calendar/schedules/(schedule_id)</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/signup"><td></td><td>
+       <strong>/signup</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#get--signup"><code class="xref">GET /signup</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="app.html#post--signup"><code class="xref">POST /signup</code></a></td><td>
+       <em></em></td></tr>
+   </table>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/../../../app/static/images/logo.jpg" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Vereinfachte elektronische Pflegedokumentation für ambulante Pflegedienste durch Schnittstellen und Informationsflussgestaltung</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=EinfachAmbulant&repo=Website&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app.html">Application</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, TUD Softwaretechnologie.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

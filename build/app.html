@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Application &#8212; Einfach:ambulant  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Einfach Ambulant WebPortal Prototype" href="readme.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="application">
+<h1>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="routes-overview">
+<h2>Routes Overview<a class="headerlink" href="#routes-overview" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="20%" />
+<col width="45%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Resource</th>
+<th class="head">Operation</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--documents-create">GET /documents/create</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--documents-create">POST /documents/create</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-create">GET /patients/create</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--patients-create">POST /patients/create</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--documents">GET /documents</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--documents">POST /documents</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--messages">GET /messages</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--messages">POST /messages</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--signup">GET /signup</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--signup">POST /signup</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--events">GET /events</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--events">POST /events</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--chat">GET /chat</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#delete--menu">DELETE /menu</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--menu">GET /menu</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--menu">POST /menu</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#put--patients-(id)-calendar-schedules">PUT /patients/(id)/calendar/schedules</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#update--patients-(id)-calendar-schedules">UPDATE /patients/(id)/calendar/schedules</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--documents-(id)-edit">GET /documents/(id)/edit</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--documents-(id)-edit">POST /documents/(id)/edit</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-(id)-calendar">GET /patients/(id)/calendar</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--accounts-(id)-edit">GET /accounts/(id)/edit</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#post--accounts-(id)-edit">POST /accounts/(id)/edit</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-(id)-edit">GET /patients/(id)/edit</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#post--patients-(id)-edit">POST /patients/(id)/edit</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-(id)-menu">GET /patients/(id)/menu</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#post--patients-(id)-menu">POST /patients/(id)/menu</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--menu-pdf-(num_week)">GET /menu/pdf/(num_week)</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--chat-(contact)-messages-(int-batch)">GET /chat/(contact)/messages/(int:batch)</a></td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Account</td>
+<td><a class="reference external" href="#get--accounts">GET /accounts</a></td>
+<td>Lists users</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--logout">GET /logout</a></td>
+<td>Logs out current user</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--login">POST /login</a></td>
+<td>Authenticates user</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#post--accounts-(id)-delete">POST /accounts/(id)/delete</a></td>
+<td>Deletes user</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--accounts-(id)">GET /accounts/(id)</a></td>
+<td>Shows user overview</td>
+</tr>
+<tr class="row-even"><td>Document</td>
+<td><a class="reference external" href="#post--documents-(document_id)-notes-(note_id)-delete">POST /documents/(document_id)/notes/(note_id)/delete</a></td>
+<td>Deletes note from document</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#post--documents-(id)-delete">POST /documents/(id)/delete</a></td>
+<td>Deletes document</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#post--documents-(id)-notes">POST /documents/(id)/notes</a></td>
+<td>Makes note on document</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--documents-(id)">GET /documents/(id)</a></td>
+<td>Shows document</td>
+</tr>
+<tr class="row-even"><td>Event</td>
+<td><a class="reference external" href="#post--events-delete">POST /events/delete</a></td>
+<td>Deletes events</td>
+</tr>
+<tr class="row-odd"><td>Home</td>
+<td><a class="reference external" href="#get--">GET /</a></td>
+<td>Shows current users home</td>
+</tr>
+<tr class="row-even"><td>Message</td>
+<td><a class="reference external" href="#post--messages-(id)-delete">POST /messages/(id)/delete</a></td>
+<td>Deletes message</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--messages-(id)">GET /messages/(id)</a></td>
+<td>Shows message</td>
+</tr>
+<tr class="row-even"><td>Patient</td>
+<td><a class="reference external" href="#get--patients">GET /patients</a></td>
+<td>Lists patients</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-(id)-menu-pdf-(num_week)">GET /patients/(id)/menu/pdf/(num_week)</a></td>
+<td>Lists patient menu choices</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-(id)-documents">GET /patients/(id)/documents</a></td>
+<td>Lists patient documents</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#get--patients-(id)">GET /patients/(id)</a></td>
+<td>Shows overview of patient</td>
+</tr>
+<tr class="row-even"><td>Patient Calendar</td>
+<td><a class="reference external" href="#get--patients-(patient_id)-calendar-schedules-(schedule_id)-(action)">GET /patients/(patient_id)/calendar/schedules/(schedule_id)/(action)</a></td>
+<td>Accepts or declines appointment suggestion</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td><a class="reference external" href="#delete--patients-(patient_id)-calendar-schedules-(schedule_id)">DELETE /patients/(patient_id)/calendar/schedules/(schedule_id)</a></td>
+<td>Deletes schedule entry</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td><a class="reference external" href="#post--patients-(id)-calendar-request">POST /patients/(id)/calendar/request</a></td>
+<td>Requests appointment suggestions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="routes">
+<h2>Routes<a class="headerlink" href="#routes" title="Permalink to this headline">¶</a></h2>
+<dl class="get">
+<dt id="get--documents-create">
+<code class="descname">GET </code><code class="descname">/documents/create</code><a class="headerlink" href="#get--documents-create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--documents-create">
+<code class="descname">POST </code><code class="descname">/documents/create</code><a class="headerlink" href="#post--documents-create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--patients-create">
+<code class="descname">GET </code><code class="descname">/patients/create</code><a class="headerlink" href="#get--patients-create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--patients-create">
+<code class="descname">POST </code><code class="descname">/patients/create</code><a class="headerlink" href="#post--patients-create" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--events-delete">
+<code class="descname">POST </code><code class="descname">/events/delete</code><a class="headerlink" href="#post--events-delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the events.</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--documents">
+<code class="descname">GET </code><code class="descname">/documents</code><a class="headerlink" href="#get--documents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--documents">
+<code class="descname">POST </code><code class="descname">/documents</code><a class="headerlink" href="#post--documents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--accounts">
+<code class="descname">GET </code><code class="descname">/accounts</code><a class="headerlink" href="#get--accounts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists users grouped by their user group.</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--patients">
+<code class="descname">GET </code><code class="descname">/patients</code><a class="headerlink" href="#get--patients" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists patients assigned to the current user, or all patients if the current
+user is a member of the nursing care group.</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--messages">
+<code class="descname">GET </code><code class="descname">/messages</code><a class="headerlink" href="#get--messages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--messages">
+<code class="descname">POST </code><code class="descname">/messages</code><a class="headerlink" href="#post--messages" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--signup">
+<code class="descname">GET </code><code class="descname">/signup</code><a class="headerlink" href="#get--signup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--signup">
+<code class="descname">POST </code><code class="descname">/signup</code><a class="headerlink" href="#post--signup" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--logout">
+<code class="descname">GET </code><code class="descname">/logout</code><a class="headerlink" href="#get--logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logs the current user out and redirects to the login.</p>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--events">
+<code class="descname">GET </code><code class="descname">/events</code><a class="headerlink" href="#get--events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--events">
+<code class="descname">POST </code><code class="descname">/events</code><a class="headerlink" href="#post--events" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--login">
+<code class="descname">POST </code><code class="descname">/login</code><a class="headerlink" href="#post--login" title="Permalink to this definition">¶</a></dt>
+<dd><p>Authenticates the user. If no user with the provided <cite>username</cite> exists or
+if the <cite>password</cite> is incorrect redirect to the login page and flash a
+message notifying the user of the problem. Otherwise redirect to the users
+home page.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Form Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>username</strong> – The username the user is trying to log in with.</li>
+<li><strong>password</strong> – The password the user is trying to log in with.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--chat">
+<code class="descname">GET </code><code class="descname">/chat</code><a class="headerlink" href="#get--chat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows a web chat with chat histories between the current user and his
+contacts. If the current user is a member of the nursing care group all
+users will be his contacts. Otherwise only users in the nursing care group
+will be his contacts.</p>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--menu">
+<code class="descname">DELETE </code><code class="descname">/menu</code><a class="headerlink" href="#delete--menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--menu">
+<code class="descname">GET </code><code class="descname">/menu</code><a class="headerlink" href="#get--menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--menu">
+<code class="descname">POST </code><code class="descname">/menu</code><a class="headerlink" href="#post--menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--">
+<code class="descname">GET </code><code class="descname">/</code><a class="headerlink" href="#get--" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows the users home page, listing documents which were changed since their
+last access as well as unread messages. Only documents related to patients
+assigned to the current user and messages by the current user’s contacts
+are listed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name" colspan="2">Query Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><ul class="first last simple">
+<li><strong>filter-by</strong> – One of <code class="docutils literal notranslate"><span class="pre">patient</span></code>, <code class="docutils literal notranslate"><span class="pre">sender</span></code>, <code class="docutils literal notranslate"><span class="pre">timestamp</span></code>.</li>
+<li><strong>id</strong> – The id of the patient or sender if <cite>filter-by</cite> is <code class="docutils literal notranslate"><span class="pre">patient</span></code> or
+<code class="docutils literal notranslate"><span class="pre">sender</span></code>. Only unread documents and messages by this patient or
+sender are listed.</li>
+<li><strong>start-date</strong> – The date of the earliest documents and messages to be
+shown. Defaults to the earliest representable date.</li>
+<li><strong>start-time</strong> – The earliest time used in conjunction with <cite>start-date</cite>.
+Defaults to 00:00.</li>
+<li><strong>end-date</strong> – The date of the newest documents and messages to be shown.
+Defaults to the current date.</li>
+<li><strong>end-date</strong> – The latest time used in conjunction with <cite>end-date</cite>.
+Defaults to 23:59.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--documents-(document_id)-notes-(note_id)-delete">
+<code class="descname">POST </code><code class="descname">/documents/</code><span class="sig-paren">(</span><em>document_id</em><span class="sig-paren">)</span><code class="descname">/notes/</code><span class="sig-paren">(</span><em>note_id</em><span class="sig-paren">)</span><code class="descname">/delete</code><a class="headerlink" href="#post--documents-(document_id)-notes-(note_id)-delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a note from a document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>document_id</strong> (<em>str</em>) – The id of the document the note is to be deleted from.</li>
+<li><strong>note_id</strong> (<em>str</em>) – The id of the note to be deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(patient_id)-calendar-schedules-(schedule_id)-(action)">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>patient_id</em><span class="sig-paren">)</span><code class="descname">/calendar/schedules/</code><span class="sig-paren">(</span><em>schedule_id</em><span class="sig-paren">)</span><code class="descname">/</code><span class="sig-paren">(</span><em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#get--patients-(patient_id)-calendar-schedules-(schedule_id)-(action)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Accepts or declines an appointment suggestion. A declined appointment is
+deleted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>patient_id</strong> (<em>str</em>) – The id of the patient whose schedule entry is to be
+accepted or declined.</li>
+<li><strong>schedule_id</strong> (<em>str</em>) – The id of the schedule entry to be accepted or
+declined.</li>
+<li><strong>action</strong> (<em>str</em>) – The action to be taken. Accepted values are <code class="docutils literal notranslate"><span class="pre">accept</span></code> and
+<code class="docutils literal notranslate"><span class="pre">decline</span></code>. If a different action is specified no changes will be
+made.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="delete">
+<dt id="delete--patients-(patient_id)-calendar-schedules-(schedule_id)">
+<code class="descname">DELETE </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>patient_id</em><span class="sig-paren">)</span><code class="descname">/calendar/schedules/</code><span class="sig-paren">(</span><em>schedule_id</em><span class="sig-paren">)</span><a class="headerlink" href="#delete--patients-(patient_id)-calendar-schedules-(schedule_id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes an entry from the patients schedule.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>patient_id</strong> (<em>str</em>) – The id of the patient whose schedule entry is to be
+deleted.</li>
+<li><strong>schedule_id</strong> (<em>str</em>) – The id of the schedule entry to be deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="put">
+<dt id="put--patients-(id)-calendar-schedules">
+<code class="descname">PUT </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/calendar/schedules</code><a class="headerlink" href="#put--patients-(id)-calendar-schedules" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--patients-(id)-calendar-request">
+<code class="descname">POST </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/calendar/request</code><a class="headerlink" href="#post--patients-(id)-calendar-request" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a message to all contacts of the current user for the patient as
+well as all users in the nursing care group, requesting appointment
+suggestions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the patient appointment suggestions are requested for.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(id)-menu-pdf-(num_week)">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/menu/pdf/</code><span class="sig-paren">(</span><em>num_week</em><span class="sig-paren">)</span><a class="headerlink" href="#get--patients-(id)-menu-pdf-(num_week)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a PDF with the menu choices made for the patient by his relatives
+for the given week of the current year.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the patient whose menu choices are to be listed.</li>
+<li><strong>num_week</strong> (<em>str</em>) – The number of the week of the current year the menu
+choices are to be listed for.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">404 Not Found</a> – The requested week has no choices made.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--documents-(id)-delete">
+<code class="descname">POST </code><code class="descname">/documents/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/delete</code><a class="headerlink" href="#post--documents-(id)-delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the document to be deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--documents-(id)-notes">
+<code class="descname">POST </code><code class="descname">/documents/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/notes</code><a class="headerlink" href="#post--documents-(id)-notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes a note on a document.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the document the note is to be made on.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.1">400 Bad Request</a> – The form contains empty values.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--documents-(id)-edit">
+<code class="descname">GET </code><code class="descname">/documents/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/edit</code><a class="headerlink" href="#get--documents-(id)-edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--documents-(id)-edit">
+<code class="descname">POST </code><code class="descname">/documents/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/edit</code><a class="headerlink" href="#post--documents-(id)-edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(id)-documents">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/documents</code><a class="headerlink" href="#get--patients-(id)-documents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the patients documents. Only lists documents the current user can
+access, unless he is a member of the nursing care group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the patient whose documents are to be listed.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(id)-calendar">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/calendar</code><a class="headerlink" href="#get--patients-(id)-calendar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--accounts-(id)-delete">
+<code class="descname">POST </code><code class="descname">/accounts/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/delete</code><a class="headerlink" href="#post--accounts-(id)-delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Marks a user as deleted. The user is no longer listed
+by any query but their data remains intact and accessible. Redirects to the
+list of users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the user to be deleted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – The current user is not a member of the nursing care
+group.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="post">
+<dt id="post--messages-(id)-delete">
+<code class="descname">POST </code><code class="descname">/messages/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/delete</code><a class="headerlink" href="#post--messages-(id)-delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the message to be deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--accounts-(id)-edit">
+<code class="descname">GET </code><code class="descname">/accounts/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/edit</code><a class="headerlink" href="#get--accounts-(id)-edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--accounts-(id)-edit">
+<code class="descname">POST </code><code class="descname">/accounts/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/edit</code><a class="headerlink" href="#post--accounts-(id)-edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(id)-edit">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/edit</code><a class="headerlink" href="#get--patients-(id)-edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--patients-(id)-edit">
+<code class="descname">POST </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/edit</code><a class="headerlink" href="#post--patients-(id)-edit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(id)-menu">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/menu</code><a class="headerlink" href="#get--patients-(id)-menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="post">
+<dt id="post--patients-(id)-menu">
+<code class="descname">POST </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><code class="descname">/menu</code><a class="headerlink" href="#post--patients-(id)-menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--menu-pdf-(num_week)">
+<code class="descname">GET </code><code class="descname">/menu/pdf/</code><span class="sig-paren">(</span><em>num_week</em><span class="sig-paren">)</span><a class="headerlink" href="#get--menu-pdf-(num_week)" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="get">
+<dt id="get--chat-(contact)-messages-(int-batch)">
+<code class="descname">GET </code><code class="descname">/chat/</code><span class="sig-paren">(</span><em>contact</em><span class="sig-paren">)</span><code class="descname">/messages/</code><span class="sig-paren">(</span><em class="property">int: </em><em>batch</em><span class="sig-paren">)</span><a class="headerlink" href="#get--chat-(contact)-messages-(int-batch)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the n-th newest batch of messages in the chat history between the
+current user and a contact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>contact</strong> (<em>str</em>) – The id of the contact whose chat history with the current
+user is requested for.</li>
+<li><strong>batch</strong> (<em>int</em>) – The number of the batch of messages from the chat history to
+be requested. 1 indicating the 16 newest messages. 2 indicating the 16
+messages after that, and so on.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--documents-(id)">
+<code class="descname">GET </code><code class="descname">/documents/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--documents-(id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows a document. The document is marked as seen for the current user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the document to be shown.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--accounts-(id)">
+<code class="descname">GET </code><code class="descname">/accounts/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--accounts-(id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows an overview of a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the requested user.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Status Codes:</th><td class="field-body"><ul class="first last simple">
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.4">403 Forbidden</a> – The current user is not a member of the nursing care
+group.</li>
+<li><a class="reference external" href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.11">410 Gone</a> – The requested user has been deleted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--patients-(id)">
+<code class="descname">GET </code><code class="descname">/patients/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--patients-(id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows an overview of the patient. Also shows a graph of the development of
+the patients health if the current user has access to the patients vitals.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the requested patient.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="get">
+<dt id="get--messages-(id)">
+<code class="descname">GET </code><code class="descname">/messages/</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#get--messages-(id)" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows a message as well as the conversation thread prior
+to the message.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>id</strong> (<em>str</em>) – The id of the message to be shown.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.translations">
+<span id="translations"></span><h2>Translations<a class="headerlink" href="#module-app.translations" title="Permalink to this headline">¶</a></h2>
+<p>This module provides translations and a helper function intended to be used as
+a Jinja template filter.</p>
+<dl class="data">
+<dt id="app.translations.translations">
+<code class="descclassname">app.translations.</code><code class="descname">translations</code><em class="property"> = {}</em><a class="headerlink" href="#app.translations.translations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used to specify translations. If the value is a tuple the first value
+specifies the singular translation, the second value the plural translation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>] or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.7)">dict</a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.7)">tuple</a>(<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>)]</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">translations</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;singular&#39;</span><span class="p">:</span> <span class="s1">&#39;singular&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">translations</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;both&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s1">&#39;singular&#39;</span><span class="p">,</span> <span class="s1">&#39;plural&#39;</span><span class="p">)}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.translations.translate">
+<code class="descclassname">app.translations.</code><code class="descname">translate</code><span class="sig-paren">(</span><em>token</em>, <em>plural=False</em><span class="sig-paren">)</span><a class="headerlink" href="#app.translations.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the translation if one exists, otherwise return the original token.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>token</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> token used to find the translation.</li>
+<li><strong>plural</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)"><em>bool</em></a>) – Specifies whether the plural translation should be returned,
+if one exists.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The translation, or <cite>token</cite>.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-app.utilities">
+<span id="utilities"></span><h2>Utilities<a class="headerlink" href="#module-app.utilities" title="Permalink to this headline">¶</a></h2>
+<p>This module provides various utility functions.</p>
+<dl class="function">
+<dt id="app.utilities.incremental_ids">
+<code class="descclassname">app.utilities.</code><code class="descname">incremental_ids</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.utilities.incremental_ids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a generator which yields an incrementing alphabetic identifier,
+starting at ‘A’, prepending another letter to prevent overflow if
+necessary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A generator which yields the next identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Generator[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a>]</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="n">incremental_ids</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">&#39;A&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">&#39;B&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">while</span> <span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="o">!=</span> <span class="s1">&#39;Z&#39;</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">next</span><span class="p">(</span><span class="n">g</span><span class="p">)</span>
+<span class="go">&#39;AA&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.utilities.is_json_requested">
+<code class="descclassname">app.utilities.</code><code class="descname">is_json_requested</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#app.utilities.is_json_requested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether a JSON document was explicitly requested or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>request</strong> (<a class="reference external" href="http://werkzeug.pocoo.org/docs/0.14/wrappers/#werkzeug.wrappers.Request" title="(in Werkzeug v0.14)"><em>werkzeug.wrappers.Request</em></a>) – A Flask request context.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns true if a JSON document is requested.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.7)">bool</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.utilities.iso8601_to_utc_datetime">
+<code class="descclassname">app.utilities.</code><code class="descname">iso8601_to_utc_datetime</code><span class="sig-paren">(</span><em>s</em><span class="sig-paren">)</span><a class="headerlink" href="#app.utilities.iso8601_to_utc_datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts an ISO 8601 formatted <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> in Zulu time without
+microseconds to its respective <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a>) – An ISO 8601 formatted <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> in Zulu time without
+microseconds.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code></a> object representing the provided
+time with the timezone set to UTC.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/datetime.html#datetime.datetime" title="(in Python v3.7)">datetime.datetime</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">iso8601_to_utc_datetime</span><span class="p">(</span><span class="s1">&#39;1970-01-01T00:00:00Z&#39;</span><span class="p">)</span>
+<span class="go">datetime.datetime(1970, 1, 1, 0, 0, tzinfo=datetime.timezone.utc)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="app.utilities.iso8601_utc_now">
+<code class="descclassname">app.utilities.</code><code class="descname">iso8601_utc_now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.utilities.iso8601_utc_now" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an ISO 8601 formatted <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> in Zulu time without
+microseconds representing the current time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a> representing the current time with the timezone
+set to UTC.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)">str</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/../../../app/static/images/logo.jpg" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+<p class="blurb">Vereinfachte elektronische Pflegedokumentation für ambulante Pflegedienste durch Schnittstellen und Informationsflussgestaltung</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=EinfachAmbulant&repo=Website&type=watch&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Quickstart</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#routes-overview">Routes Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#routes">Routes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.translations">Translations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-app.utilities">Utilities</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="readme.html" title="previous chapter">Einfach Ambulant WebPortal Prototype</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, TUD Softwaretechnologie.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
